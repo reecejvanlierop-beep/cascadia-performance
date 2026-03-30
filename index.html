@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cascadia Performance | Dr. Robert Friendt, DC — Spokane, WA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              50:  '#EEF2F8',
+              100: '#D5DFF0',
+              500: '#3A6EA8',
+              700: '#1B3D6F',
+              800: '#132D52',
+              900: '#0D1F38',
+            },
+            forest: {
+              50:  '#EDFAF3',
+              100: '#D1F0E0',
+              400: '#4CAF7D',
+              600: '#2E7D52',
+              700: '#1F5C3A',
+              800: '#164030',
+            },
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    html { scroll-behavior: smooth; }
+    .hero-bg {
+      background: linear-gradient(135deg, #0D1F38 0%, #1B3D6F 55%, #1F5C3A 100%);
+    }
+    .section-fade {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .section-fade.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .condition-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(27,61,111,0.12);
+    }
+    .condition-card { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+  </style>
+</head>
+<body class="font-sans text-gray-800 bg-white">
+
+  <!-- ── NAV ─────────────────────────────────────────────── -->
+  <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-100 shadow-sm">
+    <div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
+      <div class="flex flex-col leading-tight">
+        <span class="text-navy-700 font-bold text-lg tracking-wide">Cascadia Performance</span>
+        <span class="text-forest-600 text-xs font-medium tracking-widest uppercase">Chiropractic &amp; Rehabilitation</span>
+      </div>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
+        <a href="#conditions" class="hover:text-navy-700 transition-colors">Conditions</a>
+        <a href="#services"   class="hover:text-navy-700 transition-colors">Services</a>
+        <a href="#team"       class="hover:text-navy-700 transition-colors">Our Team</a>
+        <a href="#system"     class="hover:text-navy-700 transition-colors">Our Method</a>
+        <a href="#contact"    class="hover:text-navy-700 transition-colors">Contact</a>
+      </div>
+      <a href="tel:5095794300"
+         class="bg-forest-600 hover:bg-forest-700 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors shadow">
+        509-579-4300
+      </a>
+    </div>
+  </nav>
+
+  <!-- ── HERO ──────────────────────────────────────────────── -->
+  <section class="hero-bg text-white flex items-center" style="min-height:680px">
+    <div class="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center w-full">
+      <div class="section-fade">
+        <p class="text-forest-400 font-semibold uppercase tracking-widest text-sm mb-4">Spokane, WA</p>
+        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
+          Fix the root cause.<br/>
+          Build a stronger body.<br/>
+          <span class="text-forest-400">Stay pain-free.</span>
+        </h1>
+        <p class="text-blue-100 text-lg leading-relaxed mb-8 max-w-lg">
+          We combine manual therapy, movement correction, and strength training to create
+          long-term solutions &mdash; not temporary relief.
+        </p>
+        <div class="flex flex-col gap-3 max-w-sm">
+          <a href="tel:5095794300"
+             class="bg-forest-600 hover:bg-forest-700 text-white font-bold px-7 py-4 rounded-xl text-center transition-colors shadow-lg text-base">
+            Book Your Assessment &mdash; 509-579-4300
+          </a>
+          <a href="#system"
+             class="border border-white/40 hover:border-white text-white font-semibold px-7 py-3.5 rounded-xl text-center transition-colors text-base">
+            See How We Work &darr;
+          </a>
+        </div>
+        <p class="text-blue-200/70 text-sm mt-5">
+          Located inside The Regenerative Institute · 1303 W Summit Pkwy, Spokane WA
+        </p>
+      </div>
+      <div class="section-fade grid grid-cols-2 gap-4">
+        <img
+          src="https://images.squarespace-cdn.com/content/v1/648c8c6debbd5d5263ea32a7/38d3a201-5e9d-429d-b4b3-add59442d270/IMG_8035.jpg"
+          alt="Dr. Robert Friendt, DC"
+          class="rounded-2xl object-cover w-full h-80 col-span-2 shadow-2xl" style="object-position: center top"
+        />
+        <img
+          src="https://images.squarespace-cdn.com/content/v1/648c8c6debbd5d5263ea32a7/0f9f71c7-6193-4548-9f77-61e187d71775/Regenerative+Institute+Website+-4.jpg"
+          alt="Clinic interior"
+          class="rounded-2xl object-cover w-full h-40 shadow-xl"
+        />
+        <img
+          src="https://images.squarespace-cdn.com/content/v1/648c8c6debbd5d5263ea32a7/6c08b7a8-f356-4291-904f-e82b31397278/Regenerative+Institute+Website+-28.jpg"
+          alt="Clinic waiting room"
+          class="rounded-2xl object-cover w-full h-40 shadow-xl"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONDITIONS ─────────────────────────────────────────── -->
+  <section id="conditions" class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-14 section-fade">
+        <p class="text-forest-600 font-semibold uppercase tracking-widest text-sm mb-2">Problems We Solve</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-navy-800">If it keeps coming back, we focus on why.</h2>
+        <p class="text-gray-500 mt-3 max-w-xl mx-auto">
+          We don't just address the pain — we identify what's driving it and build a plan to fix it for good.
+        </p>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 section-fade">
+
+        <!-- Back Pain -->
+        <div class="condition-card bg-white rounded-2xl p-6 flex flex-col items-center text-center shadow-sm border border-gray-100">
+          <div class="w-14 h-14 bg-navy-50 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-8 h-8 text-navy-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M12 2C10.9 2 10 2.9 10 4v16c0 1.1.9 2 2 2s2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+              <path d="M8 7H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2M16 7h2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-navy-800 text-sm">Back Pain</h3>
+        </div>
+
+        <!-- Shoulder Pain -->
+        <div class="condition-card bg-white rounded-2xl p-6 flex flex-col items-center text-center shadow-sm border border-gray-100">
+          <div class="w-14 h-14 bg-navy-50 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-8 h-8 text-navy-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <circle cx="12" cy="5" r="2.5"/>
+              <path d="M12 7.5 Q7 10 6 15" stroke-linecap="round"/>
+              <path d="M12 7.5 Q17 10 16 17" stroke-linecap="round"/>
+              <circle cx="6" cy="16" r="2" fill="none"/>
+              <circle cx="16" cy="18" r="2" fill="none"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-navy-800 text-sm">Shoulder Pain</h3>
+        </div>
+
+        <!-- Neck Pain -->
+        <div class="condition-card bg-white rounded-2xl p-6 flex flex-col items-center text-center shadow-sm border border-gray-100">
+          <div class="w-14 h-14 bg-navy-50 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-8 h-8 text-navy-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <circle cx="12" cy="5" r="3"/>
+              <path d="M12 8v5" stroke-linecap="round"/>
+              <path d="M9 10l-2 4h10l-2-4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-navy-800 text-sm">Neck Pain</h3>
+        </div>
+
+        <!-- Knee Pain -->
+        <div class="condition-card bg-white rounded-2xl p-6 flex flex-col items-center text-center shadow-sm border border-gray-100">
+          <div class="w-14 h-14 bg-navy-50 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-8 h-8 text-navy-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M10 3 L9 11 L10 14 L9 21" stroke-linecap="round"/>
+              <path d="M14 3 L15 11 L14 14 L15 21" stroke-linecap="round"/>
+              <ellipse cx="12" cy="12" rx="4" ry="3"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-navy-800 text-sm">Knee Pain</h3>
+        </div>
+
+        <!-- Sports & Training Injuries -->
+        <div class="condition-card bg-white rounded-2xl p-6 flex flex-col items-center text-center shadow-sm border border-gray-100">
+          <div class="w-14 h-14 bg-navy-50 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-8 h-8 text-navy-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <circle cx="12" cy="4" r="2"/>
+              <path d="M12 6v5l3 3" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M9 11l-3 2M15 11l3 2" stroke-linecap="round"/>
+              <path d="M10 16l-1 5M14 16l1 5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-navy-800 text-sm">Sports &amp; Training Injuries</h3>
+        </div>
+
+        <!-- Chronic Tightness -->
+        <div class="condition-card bg-white rounded-2xl p-6 flex flex-col items-center text-center shadow-sm border border-gray-100">
+          <div class="w-14 h-14 bg-navy-50 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-8 h-8 text-navy-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M5 12 Q8 7 12 12 Q16 17 19 12" stroke-linecap="round"/>
+              <path d="M5 8 Q8 3 12 8 Q16 13 19 8" stroke-linecap="round" opacity="0.5"/>
+              <path d="M5 16 Q8 11 12 16 Q16 21 19 16" stroke-linecap="round" opacity="0.5"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-navy-800 text-sm">Chronic Tightness &amp; Restrictions</h3>
+        </div>
+
+        <!-- Arthritis -->
+        <div class="condition-card bg-white rounded-2xl p-6 flex flex-col items-center text-center shadow-sm border border-gray-100">
+          <div class="w-14 h-14 bg-navy-50 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-8 h-8 text-navy-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M9 4c0 0-2 2-2 5s2 5 2 5h6s2-2 2-5-2-5-2-5H9z" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M9 14v6M15 14v6" stroke-linecap="round"/>
+              <path d="M7 20h10" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-navy-800 text-sm">Arthritis</h3>
+        </div>
+
+        <!-- Scoliosis -->
+        <div class="condition-card bg-white rounded-2xl p-6 flex flex-col items-center text-center shadow-sm border border-gray-100">
+          <div class="w-14 h-14 bg-navy-50 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-8 h-8 text-navy-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M12 3 Q16 6 12 10 Q8 14 12 18 Q16 20 12 22" stroke-linecap="round"/>
+              <line x1="12" y1="3" x2="12" y2="3"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-navy-800 text-sm">Scoliosis</h3>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MISSION ─────────────────────────────────────────────── -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+      <div class="section-fade">
+        <img
+          src="https://images.squarespace-cdn.com/content/v1/648c8c6debbd5d5263ea32a7/0f9f71c7-6193-4548-9f77-61e187d71775/Regenerative+Institute+Website+-4.jpg"
+          alt="Cascadia Performance clinic"
+          class="rounded-2xl w-full h-80 object-cover shadow-xl"
+        />
+      </div>
+      <div class="section-fade">
+        <p class="text-forest-600 font-semibold uppercase tracking-widest text-sm mb-3">Our Approach</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-navy-800 mb-6">This is not traditional chiropractic care.</h2>
+        <p class="text-gray-600 leading-relaxed text-lg mb-4">
+          Most care focuses on short-term relief. We focus on why the problem exists in the first place —
+          and how to fix it for good.
+        </p>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Our approach is built around identifying root causes, restoring proper movement, and building
+          a body that can handle real life. We combine hands-on treatment, movement correction, and
+          strength development to create results that last.
+        </p>
+        <p class="text-gray-600 leading-relaxed">
+          Our goal isn't to keep you coming back forever. It's to give you the tools and the understanding
+          to stay healthy long after you leave the clinic.
+        </p>
+        <div class="mt-8 flex items-center gap-4">
+          <a href="tel:5095794300"
+             class="bg-navy-700 hover:bg-navy-800 text-white font-semibold px-6 py-3 rounded-xl transition-colors">
+            Book a Consultation
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── THE SYSTEM ────────────────────────────────────────── -->
+  <section id="system" class="py-20 bg-forest-50">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+      <div class="section-fade">
+        <p class="text-forest-600 font-semibold uppercase tracking-widest text-sm mb-3">How It Works</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-navy-800 mb-3">A system designed for long-term results</h2>
+        <p class="text-gray-500 mb-8">We don't guess. Every step has a purpose.</p>
+        <div class="space-y-6">
+          <div class="flex gap-5">
+            <div class="w-10 h-10 bg-navy-700 text-white rounded-xl flex items-center justify-center font-bold text-sm flex-shrink-0 mt-0.5">1</div>
+            <div>
+              <p class="font-bold text-navy-800 text-base mb-1">Assess</p>
+              <p class="text-gray-600 text-sm leading-relaxed">We evaluate how your body moves, where it compensates, and what's actually driving your pain — not just where it hurts.</p>
+            </div>
+          </div>
+          <div class="flex gap-5">
+            <div class="w-10 h-10 bg-navy-700 text-white rounded-xl flex items-center justify-center font-bold text-sm flex-shrink-0 mt-0.5">2</div>
+            <div>
+              <p class="font-bold text-navy-800 text-base mb-1">Treat</p>
+              <p class="text-gray-600 text-sm leading-relaxed">Hands-on care to reduce pain, improve mobility, and restore function where your body needs it most.</p>
+            </div>
+          </div>
+          <div class="flex gap-5">
+            <div class="w-10 h-10 bg-forest-600 text-white rounded-xl flex items-center justify-center font-bold text-sm flex-shrink-0 mt-0.5">3</div>
+            <div>
+              <p class="font-bold text-navy-800 text-base mb-1">Correct</p>
+              <p class="text-gray-600 text-sm leading-relaxed">Targeted exercises and movement changes to fix faulty patterns and prevent the problem from returning.</p>
+            </div>
+          </div>
+          <div class="flex gap-5">
+            <div class="w-10 h-10 bg-forest-600 text-white rounded-xl flex items-center justify-center font-bold text-sm flex-shrink-0 mt-0.5">4</div>
+            <div>
+              <p class="font-bold text-navy-800 text-base mb-1">Build</p>
+              <p class="text-gray-600 text-sm leading-relaxed">Strength, stability, and resilience so your body can perform without breaking down — now and long-term.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section-fade">
+        <img
+          src="https://images.squarespace-cdn.com/content/v1/648c8c6debbd5d5263ea32a7/6c08b7a8-f356-4291-904f-e82b31397278/Regenerative+Institute+Website+-28.jpg"
+          alt="Clinic waiting room"
+          class="rounded-2xl w-full h-80 object-cover shadow-xl"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TEAM ───────────────────────────────────────────────── -->
+  <section id="team" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-14 section-fade">
+        <p class="text-forest-600 font-semibold uppercase tracking-widest text-sm mb-2">The People Behind Your Care</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-navy-800">Meet Our Team</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-10 section-fade">
+
+        <!-- Dr. Friendt -->
+        <div class="bg-gray-50 rounded-3xl overflow-hidden shadow-sm border border-gray-100">
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/648c8c6debbd5d5263ea32a7/38d3a201-5e9d-429d-b4b3-add59442d270/IMG_8035.jpg"
+            alt="Dr. Robert Friendt, DC"
+            class="w-full h-72 object-cover" style="object-position: center 20%"
+          />
+          <div class="p-8">
+            <div class="flex items-start justify-between mb-2">
+              <div>
+                <h3 class="text-xl font-bold text-navy-800">Dr. Robert Friendt, DC</h3>
+                <p class="text-forest-600 font-semibold text-sm">Chiropractor</p>
+              </div>
+            </div>
+            <p class="text-gray-600 leading-relaxed text-sm mt-4">
+              Born and raised in Northern Minnesota, Dr. Friendt was a Division I pole vaulter and decathlete
+              at the University of Minnesota before earning his Doctorate from Texas Chiropractic College.
+            </p>
+            <p class="text-gray-600 leading-relaxed text-sm mt-3">
+              He brings over 10 years of experience from the Houston Medical Center, where he worked alongside
+              University of Texas Orthopedics, Rice University, and Houston Baptist University athletics.
+              Now based in Spokane with his wife and daughter, he is passionate about the outdoors and
+              helping patients move and live better.
+            </p>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="bg-navy-50 text-navy-700 text-xs font-semibold px-3 py-1 rounded-full">Manual Therapy</span>
+              <span class="bg-navy-50 text-navy-700 text-xs font-semibold px-3 py-1 rounded-full">Neurological Training</span>
+              <span class="bg-navy-50 text-navy-700 text-xs font-semibold px-3 py-1 rounded-full">Functional Rehabilitation</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reece -->
+        <div class="bg-gray-50 rounded-3xl overflow-hidden shadow-sm border border-gray-100">
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/648c8c6debbd5d5263ea32a7/5764b129-f7b2-4001-a3a6-2b3ab2278a60/unnamed.jpg"
+            alt="Reece Van Lierop — Rehab Specialist"
+            class="w-full h-72 object-cover" style="object-position: center 15%"
+          />
+          <div class="p-8">
+            <div class="flex items-start justify-between mb-2">
+              <div>
+                <h3 class="text-xl font-bold text-navy-800">Reece Van Lierop</h3>
+                <p class="text-forest-600 font-semibold text-sm">Rehab Specialist</p>
+              </div>
+            </div>
+            <p class="text-gray-600 leading-relaxed text-sm mt-4">
+              A Spokane native and Ferris High School graduate, Reece earned his degree in Applied Kinesiology
+              from Corban University. He joined the Cascadia Performance team in 2024 with a genuine passion
+              for patient-centered care.
+            </p>
+            <p class="text-gray-600 leading-relaxed text-sm mt-3">
+              Reece is dedicated to listening closely to each patient's experience and supporting them
+              throughout their healing journey — helping bridge the gap between treatment and long-term
+              functional performance.
+            </p>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="bg-forest-50 text-forest-700 text-xs font-semibold px-3 py-1 rounded-full">Applied Kinesiology</span>
+              <span class="bg-forest-50 text-forest-700 text-xs font-semibold px-3 py-1 rounded-full">Rehabilitation</span>
+              <span class="bg-forest-50 text-forest-700 text-xs font-semibold px-3 py-1 rounded-full">Patient Support</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SERVICES ───────────────────────────────────────────── -->
+  <section id="services" class="py-20 bg-navy-900 text-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-start">
+        <div class="section-fade">
+          <p class="text-forest-400 font-semibold uppercase tracking-widest text-sm mb-3">What We Offer</p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">Services Provided</h2>
+          <p class="text-blue-200 leading-relaxed mb-8">
+            Every service we offer is tied to a specific outcome — less pain, better movement, and a body
+            that holds up to the demands of your life.
+          </p>
+          <a href="tel:5095794300"
+             class="inline-block bg-forest-600 hover:bg-forest-700 text-white font-bold px-7 py-3.5 rounded-xl transition-colors shadow-lg">
+            Schedule Your First Visit
+          </a>
+        </div>
+        <div class="section-fade">
+          <ul class="space-y-4">
+            <li class="flex items-start gap-4 border-b border-white/10 pb-4">
+              <span class="w-8 h-8 bg-forest-600 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              </span>
+              <div>
+                <p class="font-semibold">Chiropractic Care</p>
+                <p class="text-blue-300 text-sm">Evidence-based, non-invasive treatment focused on root cause resolution</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4 border-b border-white/10 pb-4">
+              <span class="w-8 h-8 bg-forest-600 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              </span>
+              <div>
+                <p class="font-semibold">Manual Therapy</p>
+                <p class="text-blue-300 text-sm">Soft tissue, joint mobilization, and myofascial techniques</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4 border-b border-white/10 pb-4">
+              <span class="w-8 h-8 bg-forest-600 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              </span>
+              <div>
+                <p class="font-semibold">Neurological Training</p>
+                <p class="text-blue-300 text-sm">Improving neuromuscular control and movement patterns</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4 border-b border-white/10 pb-4">
+              <span class="w-8 h-8 bg-forest-600 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              </span>
+              <div>
+                <p class="font-semibold">Functional Rehabilitation</p>
+                <p class="text-blue-300 text-sm">Progressive programs to restore strength, mobility, and function</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4 border-b border-white/10 pb-4">
+              <span class="w-8 h-8 bg-forest-600 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              </span>
+              <div>
+                <p class="font-semibold">Postural Assessment &amp; Correction</p>
+                <p class="text-blue-300 text-sm">Identify and correct dysfunctional movement habits</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <span class="w-8 h-8 bg-forest-600 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              </span>
+              <div>
+                <p class="font-semibold">Strength &amp; Movement Training</p>
+                <p class="text-blue-300 text-sm">Building the resilience your body needs to stay out of pain long-term</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA BANNER ─────────────────────────────────────────── -->
+  <section class="py-16 bg-forest-600">
+    <div class="max-w-4xl mx-auto px-6 text-center section-fade">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Start with a full-body assessment.</h2>
+      <p class="text-green-100 text-lg mb-8 max-w-2xl mx-auto">
+        We'll identify what's actually going on, explain it clearly, and build a plan that fits your goals —
+        not a generic protocol.
+      </p>
+      <a href="tel:5095794300"
+         class="inline-block bg-white text-forest-700 hover:bg-green-50 font-bold text-lg px-10 py-4 rounded-2xl transition-colors shadow-xl">
+        Call Now: 509-579-4300
+      </a>
+    </div>
+  </section>
+
+  <!-- ── CONTACT / FOOTER ───────────────────────────────────── -->
+  <footer id="contact" class="bg-navy-900 text-white py-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-12 mb-12">
+
+        <!-- Brand -->
+        <div>
+          <div class="mb-4">
+            <p class="text-white font-bold text-xl tracking-wide">Cascadia Performance</p>
+            <p class="text-forest-400 text-xs font-semibold uppercase tracking-widest mt-1">Chiropractic &amp; Rehabilitation</p>
+          </div>
+          <p class="text-blue-200 text-sm leading-relaxed">
+            From pain to performance. We fix the root cause, correct how you move, and build a body that stays healthy long after you leave the clinic.
+          </p>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h4 class="font-bold text-sm uppercase tracking-widest text-blue-300 mb-4">Contact</h4>
+          <ul class="space-y-3 text-sm text-blue-200">
+            <li class="flex items-start gap-3">
+              <svg class="w-4 h-4 text-forest-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <span>1303 West Summit Parkway, Lower Level 1<br/>Spokane, WA 99201</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="w-4 h-4 text-forest-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              <a href="tel:5095794300" class="hover:text-white transition-colors">509-579-4300</a>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="w-4 h-4 text-forest-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              <span>info@tri-regen.com</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Hours -->
+        <div>
+          <h4 class="font-bold text-sm uppercase tracking-widest text-blue-300 mb-4">Hours of Operation</h4>
+          <ul class="space-y-2 text-sm text-blue-200">
+            <li class="flex justify-between">
+              <span>Monday – Friday</span>
+              <span class="text-white font-medium">8:00 AM – 4:00 PM</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Saturday</span>
+              <span class="text-gray-500">Closed</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Sunday</span>
+              <span class="text-gray-500">Closed</span>
+            </li>
+          </ul>
+          <div class="mt-6 bg-navy-800 rounded-xl p-4 text-sm text-blue-200">
+            <p class="font-semibold text-white mb-1">Located Inside</p>
+            <p>The Regenerative Institute</p>
+            <a href="https://www.tri-regen.com" target="_blank" rel="noopener" class="text-forest-400 hover:text-forest-300 text-xs mt-1 inline-block transition-colors">www.tri-regen.com →</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-blue-300">
+        <p>&copy; 2025 Cascadia Performance. All rights reserved.</p>
+        <p>Dr. Robert Friendt, DC &bull; Spokane, WA</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Intersection Observer for fade-in animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.section-fade').forEach(el => observer.observe(el));
+
+    // Mobile nav toggle (simple version)
+    // Nav links work via anchor scroll with smooth-scroll enabled via CSS
+  </script>
+</body>
+</html>
